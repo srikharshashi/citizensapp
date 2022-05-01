@@ -1,0 +1,44 @@
+{
+    "desc": "ae",
+    "victims": "wdef",
+    "time": "time",
+    "classified_ByUser": "titan_attack",
+    "location": "Saidabad",
+    "files":[
+        {
+            "type":"image",
+            "id":123
+        },
+        {
+            "type":"image",
+            "id":123
+        },
+        {
+            "type":"image",
+            "id":123
+        },
+        {
+            "type":"image",
+            "id":123
+        },
+        {
+            "type":"image",
+            "id":123
+        }
+    ]
+}
+
+[
+    ('file1', ("random.json", open(
+        rf"C:\Users\jayendra\Music\Alan Walker, K-391 & Emelie Hollow - Lily.mp3", "rb"), "audio/x-wav")),
+    ('file2', ("stuff.jpeg", open(
+        rf"C:\Users\jayendra\Music\Alan Walker, K-391 & Emelie Hollow - Lily.mp3", "rb"), "audio/x-wav")),
+    ('file3', ("lmao.txt", open(
+        rf"C:\Users\jayendra\Music\Alan Walker, K-391 & Emelie Hollow - Lily.mp3", "rb"), "audio/x-wav")),
+    ('file4', ("filename.mp4", open(
+        rf"C:\Users\jayendra\Music\Alan Walker, K-391 & Emelie Hollow - Lily.mp3", "rb"), "audio/x-wav")),
+    ('file5', ("filename.mp3", open(
+        rf"C:\Users\jayendra\Music\Alan Walker, K-391 & Emelie Hollow - Lily.mp3", "rb"), "audio/x-wav")),
+        
+        ('data', ('data', json.dumps(body), 'application/json')),
+]
