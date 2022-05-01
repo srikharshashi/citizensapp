@@ -48,7 +48,7 @@ class _SignUpState extends State<SignUp> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("ETH Address :"),
+                    Text("Wallet Address :"),
                     TextFormField(
                       controller: ETHController,
                       validator: (value) {

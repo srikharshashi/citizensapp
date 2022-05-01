@@ -39,7 +39,6 @@ class _ShowCasesState extends State<ShowCases> {
                 size: 50.0,
               ));
             } else if (state is FetchCasesDone) {
-              
               return ListView.builder(
                   itemCount: state.cases.length,
                   itemBuilder: (context, index) {

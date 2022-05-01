@@ -123,7 +123,8 @@ class _SettingsState extends State<Settings> {
                         child: Center(
                           child: Column(
                             children: [
-                              Text("Please wait as we change the ETH address"),
+                              Text(
+                                  "Please wait as we change the Wallet address"),
                               SpinKitWave(
                                 size: 50,
                                 color: context.read<ThemeCubit>().gettheme() ==
@@ -142,7 +143,7 @@ class _SettingsState extends State<Settings> {
                         child: Center(
                           child: Column(
                             children: [
-                              Text("Your ETH Address was changed!"),
+                              Text("Your Wallet Address was changed!"),
                               ElevatedButton(
                                   onPressed: () {
                                     context.read<SettingsCubit>().reload();
@@ -160,7 +161,7 @@ class _SettingsState extends State<Settings> {
                           child: Column(
                             children: [
                               Text(
-                                  "There was an error in changing your ETH Address!"),
+                                  "There was an error in changing your Wallet Address!"),
                               ElevatedButton(
                                   onPressed: () {
                                     context.read<SettingsCubit>().reload();
