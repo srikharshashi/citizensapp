@@ -17,11 +17,18 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'cubits/add_case_cubit/add_case_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox("main");
-  runApp(MyApp());
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+    fallbackLocale: Locale("en"),
+      path: 'assets/translations',
+      supportedLocales: [Locale("en"), Locale("hi")],
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

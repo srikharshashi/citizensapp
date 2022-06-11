@@ -88,12 +88,7 @@ class _SettingsState extends State<Settings> {
                       return Container(
                         height: height / 6,
                         width: width,
-                        // decoration: BoxDecoration(
-                        //     border: Border.all(
-                        //         color: context.read<ThemeCubit>().gettheme() ==
-                        //                 "Light"
-                        //             ? Colors.black
-                        //             : Colors.teal)),
+                      
                         child: Column(
                           children: [
                             Padding(
