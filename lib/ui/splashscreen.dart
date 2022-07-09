@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: AppBarr,
+        appBar: AppBarr(context),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -91,7 +91,7 @@ class SplashScreen extends StatelessWidget {
                                 width: width / 3,
                                 child: Center(
                                   child: Text(
-                                    "Login",
+                                    AppLocalizations.of(context).login,
                                     style: GoogleFonts.montserrat(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700),
@@ -117,7 +117,7 @@ class SplashScreen extends StatelessWidget {
                                 width: width / 3,
                                 child: Center(
                                   child: Text(
-                                    "Sign Up",
+                                    AppLocalizations.of(context).signUp,
                                     style: GoogleFonts.montserrat(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700),

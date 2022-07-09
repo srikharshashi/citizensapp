@@ -8,6 +8,7 @@ import 'package:geolocator/geolocator.dart';
 import '../../cubits/theme_cubit/theme_cubit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:citizensapp/cubits/add_case_cubit/add_case_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCase1 extends StatefulWidget {
   const AddCase1({Key? key}) : super(key: key);
@@ -41,20 +42,19 @@ class _AddCase1State extends State<AddCase1> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     List<String> crimes = [
-      "Theft",
-      "Sexual Harrashment",
-      "Homicide",
-      "Terrorism",
-      "Animal Abuse",
-      "Corruption",
-      "Child Abuse",
-      "Domestic Violence"
+      AppLocalizations.of(context).theft,
+      AppLocalizations.of(context).sexualHarrashment,
+      AppLocalizations.of(context).homicide,
+      AppLocalizations.of(context).terrorism,
+      AppLocalizations.of(context).animalAbuse,
+      AppLocalizations.of(context).childAbuse,
+      AppLocalizations.of(context).domesticViolence
     ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("CRIMEMASTER"),
+          title: Text(AppLocalizations.of(context).crimeMaster),
         ),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -68,7 +68,7 @@ class _AddCase1State extends State<AddCase1> {
                     height: height / 12,
                     padding: EdgeInsets.all(5),
                     child: Text(
-                      "Add a new Case",
+                      AppLocalizations.of(context).addANewCase,
                       style: GoogleFonts.roboto(
                           fontSize: 40, fontWeight: FontWeight.w500),
                     ),
@@ -76,7 +76,7 @@ class _AddCase1State extends State<AddCase1> {
                 ),
                 //classification conatiner
                 Container(
-                  padding: EdgeInsets.all(22),
+                  padding: EdgeInsets.all(18),
                   height: height / 7,
                   child: Column(
                     children: [
@@ -86,7 +86,7 @@ class _AddCase1State extends State<AddCase1> {
                           child: Row(
                             children: [
                               Text(
-                                "Classify the Crime",
+                                AppLocalizations.of(context).classifyTheCrime,
                                 style: GoogleFonts.roboto(fontSize: 20),
                               ),
                               Text(
@@ -99,7 +99,7 @@ class _AddCase1State extends State<AddCase1> {
                         ),
                       ),
                       Container(
-                        height: height / 18,
+                        height: height / 20,
                         width: width,
                         padding: EdgeInsets.all(4),
                         decoration: BoxDecoration(
@@ -126,8 +126,8 @@ class _AddCase1State extends State<AddCase1> {
                 ),
                 //description cont
                 Container(
-                  height: height / 2.7,
-                  padding: EdgeInsets.all(20),
+                  height: height / 2.9,
+                  padding: EdgeInsets.all(0),
                   child: Column(
                     children: [
                       Align(
@@ -136,7 +136,7 @@ class _AddCase1State extends State<AddCase1> {
                           child: Row(
                             children: [
                               Text(
-                                "Describe The Crime",
+                                AppLocalizations.of(context).describeTheCrime,
                                 style: GoogleFonts.roboto(fontSize: 20),
                               ),
                               Text(
@@ -173,7 +173,7 @@ class _AddCase1State extends State<AddCase1> {
                       child: Container(
                         child: Row(
                           children: [
-                            Text("Select a Location",
+                            Text(AppLocalizations.of(context).selectALocation,
                                 style: GoogleFonts.roboto(
                                   fontSize: 20,
                                 )),
@@ -187,7 +187,7 @@ class _AddCase1State extends State<AddCase1> {
                       ),
                     ),
                     Container(
-                      height: height / 12,
+                      height: height / 13,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -198,7 +198,7 @@ class _AddCase1State extends State<AddCase1> {
                                   height: height / 7,
                                   width: width / 2.5,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(15.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: ElevatedButton(
                                         onPressed: () {
                                           context
@@ -206,7 +206,8 @@ class _AddCase1State extends State<AddCase1> {
                                               .getLocation();
                                         },
                                         child: Text(
-                                          "Use Current Location",
+                                          AppLocalizations.of(context)
+                                              .gotTheLocation,
                                           textAlign: TextAlign.center,
                                         )),
                                   ),
@@ -230,17 +231,19 @@ class _AddCase1State extends State<AddCase1> {
                                     width: width / 2.5,
                                     child: Center(
                                         child: Text(
-                                      "Got The Location ✔️",
+                                      AppLocalizations.of(context)
+                                          .gotTheLocation,
                                       style: GoogleFonts.roboto(fontSize: 17),
                                     )));
                               } else if (state is LocationError) {
                                 return Container(
-                                    height: height / 8,
-                                    width: width / 2.5,
-                                    child: Column(
+                                    height: height / 7,
+                                    // width: width / ,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                        Text(
-                                            "There was an Error Fetching the location ❌ "),
+                                        Text("There was an Error ❌ "),
                                         ElevatedButton(
                                             onPressed: () async {
                                               LocationPermission permission =
@@ -256,7 +259,9 @@ class _AddCase1State extends State<AddCase1> {
                                                   .read<LocationCubit>()
                                                   .reload();
                                             },
-                                            child: Text("Retry"))
+                                            child: Text(
+                                                AppLocalizations.of(context)
+                                                    .retry))
                                       ],
                                     ));
                               } else {
@@ -298,7 +303,7 @@ class _AddCase1State extends State<AddCase1> {
                             } else
                               showtoast("Enter a valid/longer description");
                           },
-                          child: Text("Next")),
+                          child: Text(AppLocalizations.of(context).next)),
                     );
                   },
                 )

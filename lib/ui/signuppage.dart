@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -48,7 +49,7 @@ class _SignUpState extends State<SignUp> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Wallet Address :"),
+                    Text(AppLocalizations.of(context).walletAddress),
                     TextFormField(
                       controller: ETHController,
                       validator: (value) {
@@ -66,7 +67,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Anonymous User Name :"),
+                      Text(AppLocalizations.of(context).anonymousUserName),
                       TextFormField(
                         validator: (value) {
                           if (value == null || value.isEmpty)
@@ -87,7 +88,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Password :"),
+                      Text(AppLocalizations.of(context).password),
                       TextFormField(
                         obscureText: true,
                         validator: (value) {
@@ -109,7 +110,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Confirm Password :"),
+                      Text(AppLocalizations.of(context).confirmPassword),
                       TextFormField(
                         obscureText: true,
                         controller: pwdccontroller,
@@ -154,7 +155,7 @@ class _SignUpState extends State<SignUp> {
                             }
                           }
                         },
-                        child: Text("Sign Up")),
+                        child: Text(AppLocalizations.of(context).signUp)),
                   );
                 } else if (state is SignUpLoad) {
                   return SpinKitWave(
@@ -168,7 +169,7 @@ class _SignUpState extends State<SignUp> {
                       onPressed: () {
                         context.read<SignupCubit>().reload();
                       },
-                      child: Text("retry"));
+                      child: Text(AppLocalizations.of(context).retry));
                 }
               },
             )

@@ -51,7 +51,7 @@ class _AddCase3State extends State<AddCase3> {
     );
 
     return Scaffold(
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Container(

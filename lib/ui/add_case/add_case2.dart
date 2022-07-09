@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../../cubits/theme_cubit/theme_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCase2 extends StatefulWidget {
   const AddCase2({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class _AddCase2State extends State<AddCase2> {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
       // resizeToAvoidBottomInset: false,
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
@@ -67,7 +68,7 @@ class _AddCase2State extends State<AddCase2> {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "Criminal Details : ",
+                        "Criminal Details",
                         style: GoogleFonts.roboto(fontSize: 20),
                       ),
                     ),

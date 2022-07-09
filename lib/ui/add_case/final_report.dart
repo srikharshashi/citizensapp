@@ -21,7 +21,7 @@ class _FinalReportState extends State<FinalReport> {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Container(

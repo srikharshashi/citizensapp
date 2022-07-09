@@ -6,6 +6,7 @@ import '../constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
                 )
               ],
               centerTitle: true,
-              title: Text("CRIMEMASTER"),
+              title: Text(AppLocalizations.of(context).crimeMaster),
             ),
             body: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -48,10 +49,20 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Center(
-                      child: Text(
-                        " Welcome ${state.username}",
-                        style: GoogleFonts.notoSans(
-                            fontSize: 22, fontWeight: FontWeight.w400),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context).welcome,
+                            style: GoogleFonts.notoSans(
+                                fontSize: 22, fontWeight: FontWeight.w400),
+                          ),
+                          Text(
+                            "  ${state.username}",
+                            style: GoogleFonts.notoSans(
+                                fontSize: 22, fontWeight: FontWeight.w400),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -66,119 +77,117 @@ class _HomeState extends State<Home> {
                                 onTap: () {
                                   Navigator.pushNamed(context, ADD_CASE1);
                                 },
+                                child: Card(
+                                  elevation: 5,
+                                  surfaceTintColor: Colors.white10,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    height: height / 5,
+                                    width: width / 2,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(15.0),
+                                            child: Icon(FontAwesomeIcons
+                                                .fileCirclePlus),
+                                          ),
+                                          Text(
+                                            AppLocalizations.of(context)
+                                                .reportANewCase,
+                                            style: GoogleFonts.notoSans(
+                                                fontSize: 18),
+                                          ),
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              Card(
+                                elevation: 5,
+                                surfaceTintColor:
+                                    Color.fromARGB(255, 204, 61, 51),
                                 child: Container(
-                                  padding: EdgeInsets.all(10),
                                   height: height / 5,
-                                  width: width / 2,
+                                  width: width / 2.5,
                                   decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: context
-                                                      .read<ThemeCubit>()
-                                                      .gettheme() ==
-                                                  "Light"
-                                              ? Colors.black
-                                              : Colors.teal)),
-                                  child: Column(
+                                    color: Color.fromARGB(255, 201, 48, 48),
+                                  ),
+                                  child: Center(
+                                    child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: Icon(
-                                              FontAwesomeIcons.fileCirclePlus),
-                                        ),
+                                        Icon(Icons.warning),
                                         Text(
-                                          "Report A New Case",
-                                          style: GoogleFonts.notoSans(
-                                              fontSize: 18),
-                                        ),
-                                      ]),
-                                ),
-                              ),
-                              Container(
-                                height: height / 5,
-                                width: width / 2.5,
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 204, 41, 41),
-                                    border: Border.all(
-                                        color: context
-                                                    .read<ThemeCubit>()
-                                                    .gettheme() ==
-                                                "Light"
-                                            ? Colors.black
-                                            : Colors.teal)),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.warning),
-                                      Text("Emergency",
-                                          style: GoogleFonts.notoSans(
-                                              fontSize: 18)),
-                                    ],
+                                            AppLocalizations.of(context)
+                                                .emergency,
+                                            style: GoogleFonts.notoSans(
+                                                fontSize: 18)),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               )
                             ],
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, FETCH_CASES);
                             },
-                            child: Container(
-                              padding: EdgeInsets.all(10),
-                              height: height / 5,
-                              width: width,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color:
-                                        context.read<ThemeCubit>().gettheme() ==
-                                                "Light"
-                                            ? Colors.black
-                                            : Colors.teal),
+                            child: Card(
+                              elevation: 5,
+                              surfaceTintColor: Colors.white10,
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                height: height / 5,
+                                width: width,
+                                decoration: BoxDecoration(),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Icon(FontAwesomeIcons.newspaper),
+                                      ),
+                                      Text(
+                                        AppLocalizations.of(context)
+                                            .viewReportedCases,
+                                        style:
+                                            GoogleFonts.notoSans(fontSize: 18),
+                                      ),
+                                    ]),
                               ),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(15.0),
-                                      child: Icon(FontAwesomeIcons.newspaper),
-                                    ),
-                                    Text(
-                                      "View Reported Cases",
-                                      style: GoogleFonts.notoSans(fontSize: 18),
-                                    ),
-                                  ]),
                             ),
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, SETTINGS);
                             },
-                            child: Container(
-                              padding: EdgeInsets.all(10),
-                              height: height / 5,
-                              width: width,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: context
-                                                  .read<ThemeCubit>()
-                                                  .gettheme() ==
-                                              "Light"
-                                          ? Colors.black
-                                          : Colors.teal)),
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(15.0),
-                                      child: Icon(FontAwesomeIcons.gear),
-                                    ),
-                                    Text(
-                                      "App Settings",
-                                      style: GoogleFonts.notoSans(fontSize: 18),
-                                    ),
-                                  ]),
+                            child: Card(
+                              elevation: 5,
+                              surfaceTintColor: Colors.white10,
+                              child: Container(
+                                padding: EdgeInsets.all(10),
+                                height: height / 5,
+                                width: width,
+                                decoration: BoxDecoration(),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: Icon(FontAwesomeIcons.gear),
+                                      ),
+                                      Text(
+                                        AppLocalizations.of(context)
+                                            .appSettings,
+                                        style:
+                                            GoogleFonts.notoSans(fontSize: 18),
+                                      ),
+                                    ]),
+                              ),
                             ),
                           )
                         ],

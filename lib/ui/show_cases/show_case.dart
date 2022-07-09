@@ -24,7 +24,7 @@ class _ShowCasesState extends State<ShowCases> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Container(

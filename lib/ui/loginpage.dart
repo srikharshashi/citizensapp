@@ -7,6 +7,7 @@ import 'package:citizensapp/ui/widgets/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,14 +34,14 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "User Name:",
+              AppLocalizations.of(context).userName,
               textAlign: TextAlign.left,
             ),
           ),
@@ -62,7 +63,7 @@ class _LoginState extends State<Login> {
           Container(
             alignment: Alignment.centerLeft,
             child: Text(
-              "Password:",
+              AppLocalizations.of(context).password,
               textAlign: TextAlign.left,
             ),
           ),
@@ -109,7 +110,7 @@ class _LoginState extends State<Login> {
                         }
                       }
                     },
-                    child: Text("Submit"));
+                    child: Text(AppLocalizations.of(context).submit));
               } else if (state is LoginLoad) {
                 return SpinKitWave(
                   color: context.read<ThemeCubit>().gettheme() == "Light"
@@ -122,7 +123,7 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       context.read<LoginCubit>().reload();
                     },
-                    child: Text("Retry"));
+                    child: Text(AppLocalizations.of(context).retry));
             },
           )
         ]),

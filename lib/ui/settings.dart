@@ -1,4 +1,5 @@
 import 'package:citizensapp/constants.dart';
+import 'package:citizensapp/cubits/locale_cubit/locale_cubit_cubit.dart';
 import 'package:citizensapp/cubits/settings_cubit/settings_cubit.dart';
 import 'package:citizensapp/cubits/splash_screen/splashscreen_cubit.dart';
 import 'package:citizensapp/cubits/theme_cubit/theme_cubit.dart';
@@ -10,6 +11,7 @@ import 'package:toggle_switch/toggle_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -31,16 +33,52 @@ class _SettingsState extends State<Settings> {
     }
 
     return Scaffold(
-      appBar: AppBarr,
+      appBar: AppBarr(context),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Container(
           child: Column(
             children: [
               Text(
-                "Settings",
+                AppLocalizations.of(context).settings,
                 style: GoogleFonts.notoSans(
                     fontSize: 20, fontWeight: FontWeight.w700),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+                child: Container(
+                  height: height / 10,
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        AppLocalizations.of(context).language,
+                        style: GoogleFonts.notoSans(
+                            fontSize: 18, fontWeight: FontWeight.w500),
+                      ),
+                      ToggleSwitch(
+                        minWidth: 70.0,
+                        initialLabelIndex:
+                            context.read<LocaleCubit>().getLocale(),
+                        cornerRadius: 20.0,
+                        activeFgColor: Colors.white,
+                        inactiveBgColor: Colors.grey,
+                        inactiveFgColor: Colors.white,
+                        totalSwitches: 2,
+                        labels: ["हिन्दी", "English"],
+                        activeBgColors: [
+                          [Colors.blue],
+                          [Colors.teal]
+                        ],
+                        onToggle: (index) {
+                          context.read<LocaleCubit>().changeLocale();
+                        },
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Padding(
                 padding:
@@ -54,7 +92,7 @@ class _SettingsState extends State<Settings> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        " Theme ",
+                        AppLocalizations.of(context).theme,
                         style: GoogleFonts.notoSans(
                             fontSize: 18, fontWeight: FontWeight.w500),
                       ),
@@ -88,7 +126,6 @@ class _SettingsState extends State<Settings> {
                       return Container(
                         height: height / 6,
                         width: width,
-                      
                         child: Column(
                           children: [
                             Padding(
@@ -101,7 +138,8 @@ class _SettingsState extends State<Settings> {
                                   )),
                             ),
                             ElevatedButton(
-                              child: Text("Change ETH Address"),
+                              child: Text(AppLocalizations.of(context)
+                                  .changeWalletAddress),
                               onPressed: () {
                                 context
                                     .read<SettingsCubit>()
@@ -143,7 +181,8 @@ class _SettingsState extends State<Settings> {
                                   onPressed: () {
                                     context.read<SettingsCubit>().reload();
                                   },
-                                  child: Text("Reload"))
+                                  child:
+                                      Text(AppLocalizations.of(context).reload))
                             ],
                           ),
                         ),
@@ -161,7 +200,8 @@ class _SettingsState extends State<Settings> {
                                   onPressed: () {
                                     context.read<SettingsCubit>().reload();
                                   },
-                                  child: Text("Reload"))
+                                  child:
+                                      Text(AppLocalizations.of(context).reload))
                             ],
                           ),
                         ),
@@ -194,7 +234,7 @@ class _SettingsState extends State<Settings> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Log Out   ",
+                            AppLocalizations.of(context).logOut,
                             style: GoogleFonts.notoSans(
                                 fontSize: 18, fontWeight: FontWeight.w500),
                           ),
