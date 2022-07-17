@@ -1,8 +1,8 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/cubits/auth_status_cubit/auth_status_cubit.dart';
-import 'package:citizensapp/cubits/splash_screen/splashscreen_cubit.dart';
-import 'package:citizensapp/cubits/theme_cubit/theme_cubit.dart';
-import 'package:citizensapp/ui/widgets/widgets.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/cubits/auth_status_cubit/auth_status_cubit.dart';
+import 'package:citizenapp2/cubits/splash_screen/splashscreen_cubit.dart';
+import 'package:citizenapp2/cubits/theme_cubit/theme_cubit.dart';
+import 'package:citizenapp2/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

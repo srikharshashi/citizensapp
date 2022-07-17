@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:citizensapp/env.dart';
+import 'package:citizenapp2/env.dart';
 import './exceptions.dart';
 
 class FileUploader {

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/models/question.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/models/question.dart';
 import 'package:meta/meta.dart';
 
 import 'package:geolocator/geolocator.dart';

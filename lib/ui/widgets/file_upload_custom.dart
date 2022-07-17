@@ -1,6 +1,6 @@
-import 'package:citizensapp/cubits/file_upload_cubit/file_upload_cubit.dart';
-import 'package:citizensapp/models/file.dart';
-import 'package:citizensapp/ui/widgets/fileicon.dart';
+import 'package:citizenapp2/cubits/file_upload_cubit/file_upload_cubit.dart';
+import 'package:citizenapp2/models/file.dart';
+import 'package:citizenapp2/ui/widgets/fileicon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

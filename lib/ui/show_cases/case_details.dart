@@ -1,8 +1,8 @@
-import 'package:citizensapp/cubits/theme_cubit/theme_cubit.dart';
-import 'package:citizensapp/models/case.dart';
-import 'package:citizensapp/services/data_calls.dart';
-import 'package:citizensapp/ui/widgets/fileicon.dart';
-import 'package:citizensapp/ui/widgets/widgets.dart';
+import 'package:citizenapp2/cubits/theme_cubit/theme_cubit.dart';
+import 'package:citizenapp2/models/case.dart';
+import 'package:citizenapp2/services/data_calls.dart';
+import 'package:citizenapp2/ui/widgets/fileicon.dart';
+import 'package:citizenapp2/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +30,7 @@ class _CaseDetailsState extends State<CaseDetails> {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Container(
-            child: FutureBuilder<Case>(
+            child: FutureBuilder<dynamic>(
                 future: datacall.getCase(widget.case_id, box.get("jwt")),
                 builder: (context, snapshot) {
                   switch (snapshot.connectionState) {

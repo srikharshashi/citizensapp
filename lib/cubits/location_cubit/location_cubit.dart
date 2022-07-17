@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:citizensapp/services/location_service.dart';
+import 'package:citizenapp2/services/location_service.dart';
 import 'package:meta/meta.dart';
 import 'package:geolocator/geolocator.dart';
 

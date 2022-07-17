@@ -1,9 +1,9 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/cubits/add_case_cubit/add_case_cubit.dart';
-import 'package:citizensapp/cubits/file_upload_cubit/file_upload_cubit.dart';
-import 'package:citizensapp/models/file.dart';
-import 'package:citizensapp/ui/widgets/file_upload_custom.dart';
-import 'package:citizensapp/ui/widgets/widgets.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/cubits/add_case_cubit/add_case_cubit.dart';
+import 'package:citizenapp2/cubits/file_upload_cubit/file_upload_cubit.dart';
+import 'package:citizenapp2/models/file.dart';
+import 'package:citizenapp2/ui/widgets/file_upload_custom.dart';
+import 'package:citizenapp2/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

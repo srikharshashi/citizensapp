@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/models/file.dart';
-import 'package:citizensapp/services/file_upload.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/models/file.dart';
+import 'package:citizenapp2/services/file_upload.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as p;

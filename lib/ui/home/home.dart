@@ -1,8 +1,7 @@
-import 'package:citizensapp/cubits/auth_status_cubit/auth_status_cubit.dart';
-import 'package:citizensapp/cubits/splash_screen/splashscreen_cubit.dart';
-import 'package:citizensapp/cubits/theme_cubit/theme_cubit.dart';
+import 'package:citizenapp2/cubits/auth_status_cubit/auth_status_cubit.dart';
+import 'package:citizenapp2/cubits/splash_screen/splashscreen_cubit.dart';
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import '../../constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,7 +28,7 @@ class _HomeState extends State<Home> {
               actions: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
+                  child: InkWell(
                       onTap: () {
                         context.read<AuthstatusCubit>().logout();
                         context.read<SplashscreenCubit>().initialize();
@@ -73,7 +72,7 @@ class _HomeState extends State<Home> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              GestureDetector(
+                              InkWell(
                                 onTap: () {
                                   Navigator.pushNamed(context, ADD_CASE1);
                                 },
@@ -104,28 +103,33 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                               ),
-                              Card(
-                                elevation: 5,
-                                surfaceTintColor:
-                                    Color.fromARGB(255, 204, 61, 51),
-                                child: Container(
-                                  height: height / 5,
-                                  width: width / 2.5,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 201, 48, 48),
-                                  ),
-                                  child: Center(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.warning),
-                                        Text(
-                                            AppLocalizations.of(context)
-                                                .emergency,
-                                            style: GoogleFonts.notoSans(
-                                                fontSize: 18)),
-                                      ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(context, EMERGENCY);
+                                },
+                                child: Card(
+                                  elevation: 5,
+                                  surfaceTintColor:
+                                      Color.fromARGB(255, 204, 61, 51),
+                                  child: Container(
+                                    height: height / 5,
+                                    width: width / 2.5,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 201, 48, 48),
+                                    ),
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.warning),
+                                          Text(
+                                              AppLocalizations.of(context)
+                                                  .emergency,
+                                              style: GoogleFonts.notoSans(
+                                                  fontSize: 18)),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

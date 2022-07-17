@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:citizensapp/services/exceptions.dart';
+import 'package:citizenapp2/services/exceptions.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:citizensapp/services/auth_service.dart';
+import 'package:citizenapp2/services/auth_service.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

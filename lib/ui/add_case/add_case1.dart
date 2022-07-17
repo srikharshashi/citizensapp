@@ -1,5 +1,5 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/cubits/location_cubit/location_cubit.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/cubits/location_cubit/location_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:geolocator/geolocator.dart';
 import '../../cubits/theme_cubit/theme_cubit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:citizensapp/cubits/add_case_cubit/add_case_cubit.dart';
+import 'package:citizenapp2/cubits/add_case_cubit/add_case_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddCase1 extends StatefulWidget {

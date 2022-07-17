@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import "package:http/http.dart " as http;
-import 'package:citizensapp/env.dart';
-import 'package:citizensapp/services/exceptions.dart';
+import 'package:citizenapp2/env.dart';
+import 'package:citizenapp2/services/exceptions.dart';
 
 class AuthService {
   Future<dynamic> login(String username, String password) async {

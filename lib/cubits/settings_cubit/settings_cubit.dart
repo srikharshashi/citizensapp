@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:citizensapp/services/auth_service.dart';
+import 'package:citizenapp2/services/auth_service.dart';
 import 'package:meta/meta.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

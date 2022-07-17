@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:citizensapp/services/auth_service.dart';
-import 'package:citizensapp/services/exceptions.dart';
+import 'package:citizenapp2/services/auth_service.dart';
+import 'package:citizenapp2/services/exceptions.dart';
 
 part 'signup_state.dart';
 

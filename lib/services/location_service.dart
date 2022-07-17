@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:citizensapp/services/exceptions.dart';
+import 'package:citizenapp2/services/exceptions.dart';
 import 'package:geolocator/geolocator.dart';
 
 class LocationService {

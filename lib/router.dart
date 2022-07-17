@@ -1,14 +1,15 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/ui/add_case/add_case1.dart';
-import 'package:citizensapp/ui/add_case/add_case2.dart';
-import 'package:citizensapp/ui/add_case/add_case3.dart';
-import 'package:citizensapp/ui/add_case/final_report.dart';
-import 'package:citizensapp/ui/home.dart';
-import 'package:citizensapp/ui/loginpage.dart';
-import 'package:citizensapp/ui/settings.dart';
-import 'package:citizensapp/ui/show_cases/show_case.dart';
-import 'package:citizensapp/ui/signuppage.dart';
-import 'package:citizensapp/ui/splashscreen.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/ui/add_case/add_case1.dart';
+import 'package:citizenapp2/ui/add_case/add_case2.dart';
+import 'package:citizenapp2/ui/add_case/add_case3.dart';
+import 'package:citizenapp2/ui/add_case/final_report.dart';
+import 'package:citizenapp2/ui/emergency/emergency.dart';
+import 'package:citizenapp2/ui/home/home.dart';
+import 'package:citizenapp2/ui/onboard/loginpage.dart';
+import 'package:citizenapp2/ui/settings/settings.dart';
+import 'package:citizenapp2/ui/show_cases/show_case.dart';
+import 'package:citizenapp2/ui/onboard/signuppage.dart';
+import 'package:citizenapp2/ui/onboard/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -45,6 +46,9 @@ class AppRouter {
       case FETCH_CASES:
         return PageTransition(
             child: ShowCases(), type: PageTransitionType.rightToLeft);
+      case EMERGENCY:
+        return PageTransition(
+            child: Emergency(), type: PageTransitionType.rightToLeft);
       default:
         return null;
     }

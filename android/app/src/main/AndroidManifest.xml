@@ -1,10 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.citizensapp">
-      <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
-
+    package="com.example.citizenapp2">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
    <application
-        android:label="citizensapp"
+        android:label="citizenapp2"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

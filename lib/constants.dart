@@ -1,4 +1,4 @@
-import 'package:citizensapp/models/question.dart';
+import 'package:citizenapp2/models/question.dart';
 
 const HOME_ROUTE = "/home";
 const ADD_CASE1 = "/add_case1";
@@ -11,6 +11,7 @@ const SIGNUP_PAGE = "/signup";
 const SPLASH_SCREEN = "/";
 const FINAL_REPORT = "/finalreport";
 const FETCH_CASES = "/fetch_case";
+const EMERGENCY = "/emergency";
 
 enum CustomFileType { audio, video, image, newfile }
 

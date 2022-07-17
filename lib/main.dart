@@ -1,19 +1,20 @@
-import 'package:citizensapp/cubits/auth_status_cubit/auth_status_cubit.dart';
-import 'package:citizensapp/cubits/fetch_cases_cubit/fetch_cases_cubit.dart';
-import 'package:citizensapp/cubits/file_upload_cubit/file_upload_cubit.dart';
-import 'package:citizensapp/cubits/final_report/final_report_cubit.dart';
-import 'package:citizensapp/cubits/locale_cubit/locale_cubit_cubit.dart';
-import 'package:citizensapp/cubits/location_cubit/location_cubit.dart';
-import 'package:citizensapp/cubits/login_cubit/login_cubit.dart';
-import 'package:citizensapp/cubits/settings_cubit/settings_cubit.dart';
-import 'package:citizensapp/cubits/signup_cubit/signup_cubit.dart';
-import 'package:citizensapp/cubits/splash_screen/splashscreen_cubit.dart';
-import 'package:citizensapp/cubits/theme_cubit/theme_cubit.dart';
-import 'package:citizensapp/router.dart';
-import 'package:citizensapp/services/auth_service.dart';
-import 'package:citizensapp/services/data_calls.dart';
-import 'package:citizensapp/services/file_upload.dart';
-import 'package:citizensapp/services/location_service.dart';
+import 'package:citizenapp2/cubits/auth_status_cubit/auth_status_cubit.dart';
+import 'package:citizenapp2/cubits/emergency_cubit/emergency_cubit.dart';
+import 'package:citizenapp2/cubits/fetch_cases_cubit/fetch_cases_cubit.dart';
+import 'package:citizenapp2/cubits/file_upload_cubit/file_upload_cubit.dart';
+import 'package:citizenapp2/cubits/final_report/final_report_cubit.dart';
+import 'package:citizenapp2/cubits/locale_cubit/locale_cubit_cubit.dart';
+import 'package:citizenapp2/cubits/location_cubit/location_cubit.dart';
+import 'package:citizenapp2/cubits/login_cubit/login_cubit.dart';
+import 'package:citizenapp2/cubits/settings_cubit/settings_cubit.dart';
+import 'package:citizenapp2/cubits/signup_cubit/signup_cubit.dart';
+import 'package:citizenapp2/cubits/splash_screen/splashscreen_cubit.dart';
+import 'package:citizenapp2/cubits/theme_cubit/theme_cubit.dart';
+import 'package:citizenapp2/router.dart';
+import 'package:citizenapp2/services/auth_service.dart';
+import 'package:citizenapp2/services/data_calls.dart';
+import 'package:citizenapp2/services/file_upload.dart';
+import 'package:citizenapp2/services/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => EmergencyCubit(locationService: locationService),
+        ),
         BlocProvider(
           create: (context) => ThemeCubit(),
         ),

@@ -1,5 +1,5 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/models/file.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/models/file.dart';
 
 class Case {
   String ID;

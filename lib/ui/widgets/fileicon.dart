@@ -1,5 +1,5 @@
-import 'package:citizensapp/constants.dart';
-import 'package:citizensapp/cubits/file_upload_cubit/file_upload_cubit.dart';
+import 'package:citizenapp2/constants.dart';
+import 'package:citizenapp2/cubits/file_upload_cubit/file_upload_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

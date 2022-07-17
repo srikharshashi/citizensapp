@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:citizensapp/services/data_calls.dart';
+import 'package:citizenapp2/services/data_calls.dart';
 import 'package:meta/meta.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:hive_flutter/hive_flutter.dart';
